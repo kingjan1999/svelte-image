@@ -21,6 +21,8 @@
   export let blurhash = null;
   export let blurhashSize = null;
   export let preview = true;
+  export let origHeight = null;
+  export let origWidth = null;
 
   let className = "";
   export { className as class };
@@ -108,6 +110,8 @@
           {width}
           {height}
           {usemap}
+          data-orig-width={origWidth}
+          data-orig-height={origHeight}
         />
       </picture>
     </div>

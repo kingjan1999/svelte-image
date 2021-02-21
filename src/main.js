@@ -465,16 +465,25 @@ async function replaceInComponent(edited, node) {
   replaced = insert(content, base64, start, end, offset);
 
   replaced = insert(
-    replaced.content,
+    content,
     getSrcset(sizes),
     end + 1,
     end + 2,
-    replaced.offset
+    offset
   );
 
   replaced = insert(
     replaced.content,
     ` ratio=\'${(1 / (sizes[0].width / sizes[0].height)) * 100}%\' `,
+    end + 1,
+    end + 2,
+    replaced.offset
+  );
+
+  const meta = await sharp(paths.inPath).metadata();
+  replaced = insert(
+    replaced.content,
+    ` origWidth=\'${meta.width}\' origHeight=\'${meta.height}\' `,
     end + 1,
     end + 2,
     replaced.offset
