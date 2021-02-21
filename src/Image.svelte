@@ -20,6 +20,7 @@
   export let placeholderClass = "";
   export let blurhash = null;
   export let blurhashSize = null;
+  export let preview = true;
 
   let className = "";
   export { className as class };
@@ -40,7 +41,7 @@
 </script>
 
 <style>
-  img, canvas {
+  img.preview, canvas {
     object-position: center;
     position: absolute;
     top: 0;
@@ -87,11 +88,13 @@
 >  
   <div class:loaded style="position: relative; width: 100%;">
     <div style="position: relative; overflow: hidden;">
+      {#if preview}
       <div style="width:100%;padding-bottom:{ratio};"></div>
       {#if blurhash}
         <canvas class="placeholder" use:decodeBlurhash width={blurhashSize.width} height={blurhashSize.height} />
       {:else}
         <img class="placeholder {placeholderClass}" class:blur {src} {alt} />
+      {/if}
       {/if}
       <picture>
         <source type="image/webp" srcset="{srcsetWebp}" {sizes} />
@@ -100,6 +103,7 @@
           {src}
           use:load
           class="main {c} {className}"
+          class:preview={preview}
           {alt}
           {width}
           {height}

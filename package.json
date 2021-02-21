@@ -1,6 +1,6 @@
 {
-  "name": "svelte-image",
-  "version": "0.2.9",
+  "name": "@kingjan1999/svelte-image",
+  "version": "0.3.0",
   "description": "Image processing with sharp for Svelte",
   "svelte": "src/Image.svelte",
   "main": "src/index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/matyunya/svelte-image.git"
+    "url": "git+https://github.com/kingjan1999/svelte-image.git"
   },
   "keywords": [
     "svelte",
@@ -21,14 +21,14 @@
   "author": "Maxim Matyunin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/matyunya/svelte-image/issues"
+    "url": "https://github.com/kingjan1999/svelte-image/issues"
   },
   "files": [
     "src/index.js",
     "src/Image.svelte",
     "src/main.js"
   ],
-  "homepage": "https://github.com/matyunya/svelte-image#readme",
+  "homepage": "https://github.com/kingjan1999/svelte-image#readme",
   "dependencies": {
     "axios": "^0.19.2",
     "blurhash": "^1.1.3",
